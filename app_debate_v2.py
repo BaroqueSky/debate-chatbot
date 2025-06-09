@@ -71,7 +71,7 @@ if not st.session_state.setup_complete:
 if st.session_state.setup_complete and not st.session_state.feedback_shown and not st.session_state.chat_complete:
     st.info(
         """
-        請你開始一段簡單的自我介紹，並說明你的論點
+        請你開始說明你的論點
         """,
         icon = "👋"
     )
@@ -138,9 +138,10 @@ if st.session_state.feedback_shown:
             { "role": "system",
             "content": """你是一個用來提供辯論表現回饋的輔助工具。
             你的評斷標準與語氣都相當犀利嚴格。
-            在給予回饋之前，請先對表現打分，分數範圍為 1 到 10。
+            在給予回饋之前，請先對雙方表現打分，分數範圍為 1 到 10。
             請遵循以下格式：
-            整體評分：//你給使用者的分數
+            贊成方評分：//你給贊成方的分數
+            反對方評分：//你給反對方的分數
             回饋內容：//在這裡撰寫你的回饋
             只需提供回饋，不要提出任何額外問題。
             並在最後說出你認為這場辯論中的勝利方為哪個立場。
